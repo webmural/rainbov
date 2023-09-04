@@ -3,13 +3,23 @@
 
 /* play. */
 
-:nth-child(1n) { --tape-filter: hue-rotate(0deg) }
-:nth-child(2n) { --tape-filter: hue-rotate(51.5deg) }
-:nth-child(3n) { --tape-filter: hue-rotate(103deg) }
-:nth-child(4n) { --tape-filter: hue-rotate(154.5deg) }
-:nth-child(5n) { --tape-filter: hue-rotate(-154.5deg) }
-:nth-child(6n) { --tape-filter: hue-rotate(-103deg) }
-:nth-child(7n) { --tape-filter: hue-rotate(-51.5deg) }
+[class] {
+  --do: 0deg;
+  --re: calc(360deg / 7);
+  --mi: calc(720deg / 7);
+  --fa: calc(1080deg / 7);
+  --so: calc(-1080deg / 7);
+  --la: calc(-720deg / 7);
+  --ti: calc(-360deg / 7);
+}
+
+:nth-child(1n) { --tape-filter: hue-rotate(var(--do)) }
+:nth-child(2n) { --tape-filter: hue-rotate(var(--re)) }
+:nth-child(3n) { --tape-filter: hue-rotate(var(--mi)) }
+:nth-child(4n) { --tape-filter: hue-rotate(var(--fa)) }
+:nth-child(5n) { --tape-filter: hue-rotate(var(--so)) }
+:nth-child(6n) { --tape-filter: hue-rotate(var(--la)) }
+:nth-child(7n) { --tape-filter: hue-rotate(var(--ti)) }
 
 :root {
   --tape-play: gold;
